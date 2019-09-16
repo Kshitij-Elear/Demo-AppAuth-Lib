@@ -1,0 +1,2 @@
+include ':app', ':cocoappauthlib'
+rootProject.name='AppAuthLib'

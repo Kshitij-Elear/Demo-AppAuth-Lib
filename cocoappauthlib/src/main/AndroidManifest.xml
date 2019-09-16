@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cocoappauthlib">
+
+<application>
+    <activity android:name=".AppLib">
+
+        <!-- So that the response can be sent to MainActivity by AppAuth -->
+        <intent-filter>
+            <action android:name="com.example.autho.HANDLE_AUTHORIZATION_RESPONSE" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <!-- for handling response from browser we register intent -->
+    <activity android:name="net.openid.appauth.RedirectUriReceiverActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="${applicationId}" />
+        </intent-filter>
+    </activity>
+
+
+
+</application>
+
+</manifest>
